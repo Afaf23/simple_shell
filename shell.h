@@ -6,5 +6,6 @@
 #include <string.h>
 #include <limits.h>
 
-
+/* prototypes */
+void we_print(const char *string);
 #endif
