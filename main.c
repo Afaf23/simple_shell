@@ -10,7 +10,7 @@
 int main(int ac, char **argv)
 {
 	char *line = NULL, **command = NULL;
-	int status = 0;
+	int status = 0, index = 0;
 
 	(void) ac;
 
@@ -23,11 +23,12 @@ int main(int ac, char **argv)
 				write(STDOUT_FILENO, "\n", 1);
 				return (status);
 		}
+		index++;
 
 		command = split(line);
 		if (!command)
 			continue;
 
-		status = _execute(command, argv);
+		status = _execute(command, argv, index);
 	}
 }

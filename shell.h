@@ -33,7 +33,7 @@ void freearray(char **array);
 
 
 
-int _execute(char **command, char **argv);
+int _execute(char **command, char **argv, int index);
 char *read_line(void);
 char **tokeniser(char *line);
 char *_strdup(const char *str);
@@ -43,5 +43,7 @@ char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 char *get_env(char *var);
 char *get_path(char *message);
-
+void PrintError(char *nsh, char *cmd, int index);
+char *_itoa(int n);
+void rev_str(char *str, int len);
 #endif

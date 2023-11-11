@@ -1,24 +1,37 @@
 #include "shell.h"
-
-int _execute(char **command, char **argv);
+/**
+ * _execute - function that execute a command with arguments.
+ * @argv: An array of strings.
+ * @command: a double pointer to a char.
+ * Return: The exit status of the executed command.
+ */
+int _execute(char **command, char **argv, int index)
 {
+	char *msg
 	pid_t ch;
 	int status;
 
+	msg = get_path(command[0]);
+	if (!msg)
+	{
+		PrintError(argv[0], command[0], index);
+		freearray(command);
+		return (127);
+	}
 	ch = fork();
 	if (ch == 0)
 	{
-		if (execve(command[0], command, envrmt) == -1)
+		if (execve(msg, command, envrmt) == -1)
 		{
-			perror(argv[0]);
+			free(msg), msg == NULL;
 			freearray(command);
-			exit(0);
 		}
 	}
 	else
 	{
 		waitpid(ch, &status, 0);
 		freearray(command);
+		free(msg), msg == NULL;
 	}
 	return (WEXITSTATUS(status));
 }

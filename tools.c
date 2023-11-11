@@ -18,5 +18,53 @@ void freearray(char **array)
 	}
 
 	free(array);
+}
+void PrintError(char *nsh, char *cmd, int index)
+{
+	char *idx; format[] = ": not found\n";
+
+	idx = _itoa(index);
+	write(STDERR_FILENO, nsh, _strlen(nsh));
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, idx, _strlen(idx));
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, cmd, _strlen(cmd);
+	write(STDERR_FILENO, format, _strlen(format));
+	free(idx);
 
 }
+char *_itoa(int n)
+{
+	char buffer[20];
+	int i = 0;
+
+	if (n == 0)
+		buffer[i++] = '0';
+	else
+	{
+		while (n > 0)
+		{
+			buffer[i++] = (n % 10) + '0';
+			n /= 10;
+		}
+	}
+	buffer[i] = '\0';
+	rev_str(buffer, i);
+	return (_strdup(buffer));
+}
+void rev_str(char *str, int len)
+{
+	char temp;
+	int j = 0;
+	int f = len - 1;
+
+	while (j < f)
+	{
+		temp = str[j];
+		str[j] = str[f];
+		str[f] = temp;
+		j++;
+		f--;
+	}
+}
+
