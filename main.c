@@ -28,7 +28,9 @@ int main(int ac, char **argv)
 		command = split(line);
 		if (!command)
 			continue;
-
+		if (exit_builtin(command[0]))
+			handle_b(command, argv, status, index);
+		else	
 		status = _execute(command, argv, index);
 	}
 }

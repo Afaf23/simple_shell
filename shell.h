@@ -46,4 +46,8 @@ char *get_path(char *message);
 void PrintError(char *nsh, char *cmd, int index);
 char *_itoa(int n);
 void rev_str(char *str, int len);
+void p_envrmt(char **command, int status);
+void exit_sh(char **command, int status);
+void handle_b(char **command, char **argv, int status, int index);
+int exit_builtin(char *messsage);
 #endif
