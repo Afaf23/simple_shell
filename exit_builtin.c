@@ -20,10 +20,10 @@ int exit_builtin(char *message)
  * handle_b - it handles built-in functiuon.
  * @command: double pointer to a char.
  * @argv: a pointer to an array
- * @status: is an integer.
+ * @status: is a pinter to an integer.
  * @index: an integer.
  */
-void handle_b(char **command, char **argv, int status, int index)
+void handle_b(char **command, char **argv, int *status, int index)
 {
 	(void) argv;
 	(void) index;
@@ -36,22 +36,21 @@ void handle_b(char **command, char **argv, int status, int index)
 /**
  * exit_sh - this function called when we want to exit the shell.
  * @command: is a double pointer points to a char.
- * @status: is an integer.
+ * @status: is a pointer to an integer.
  */
-void exit_sh(char **command, int status)
+void exit_sh(char **command, int *status)
 {
 	freearray(command);
-	exit(status);
+	exit(*status);
 }
 /**
  * p_envrmt - this function prints the environ.
  * @command: is a double pointer to a char.
- * @status: is an integer.
+ * @status: is a pointer to an integer.
  */
-void p_envrmt(char **command, int status)
+void p_envrmt(char **command, int *status)
 {
 	int i;
-	(void) status;
 
 	for (i = 0; envrmt[i]; i++)
 	{
@@ -59,4 +58,5 @@ void p_envrmt(char **command, int status)
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	freearray(command);
+	(*status) = 0;
 }
