@@ -21,17 +21,17 @@ void freearray(char **array)
 }
 void PrintError(char *nsh, char *cmd, int index)
 {
-	char *idx; format[] = ": not found\n";
+	char *idx; 
+	char format[] = ": not found\n";
 
 	idx = _itoa(index);
 	write(STDERR_FILENO, nsh, _strlen(nsh));
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, idx, _strlen(idx));
 	write(STDERR_FILENO, ": ", 2);
-	write(STDERR_FILENO, cmd, _strlen(cmd);
+	write(STDERR_FILENO, cmd, _strlen(cmd));
 	write(STDERR_FILENO, format, _strlen(format));
 	free(idx);
-
 }
 char *_itoa(int n)
 {

@@ -41,14 +41,15 @@ int _strcmp(char *s1, char *s2)
 	while (*s1)
 	{
 		if (*s1 != *s2)
+		{
 			break;
-			s1++;
-			s2++;
-			cmp = (int)*s1 - (int)*s2;
+		}
+		s1++;
+		s2++;
+		cmp = (int)*s1 - (int)*s2;
 	}
 	return (cmp);
 }
-
 /**
  * _strlen - Calculate the length of string
  *
@@ -104,6 +105,6 @@ char *_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] '\0';
+	dest[i] = '\0';
 	return (dest);
 }
