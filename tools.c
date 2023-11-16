@@ -21,8 +21,12 @@ void freearray(char **array)
 }
 void PrintError(char *nsh, char *cmd, int index)
 {
+<<<<<<< HEAD
+	char *idx; char format[15] = ": not found\n";
+=======
 	char *idx; 
 	char format[] = ": not found\n";
+>>>>>>> 0002da9e4dbcabbf99605d7ec139e14b0e32fe95
 
 	idx = _itoa(index);
 	write(STDERR_FILENO, nsh, _strlen(nsh));

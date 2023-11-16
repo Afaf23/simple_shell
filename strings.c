@@ -44,9 +44,15 @@ int _strcmp(char *s1, char *s2)
 		{
 			break;
 		}
+<<<<<<< HEAD
+			s1++;
+			s2++;
+			cmp = (int)*s1 - (int)*s2;
+=======
 		s1++;
 		s2++;
 		cmp = (int)*s1 - (int)*s2;
+>>>>>>> 0002da9e4dbcabbf99605d7ec139e14b0e32fe95
 	}
 	return (cmp);
 }
@@ -105,6 +111,10 @@ char *_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
+<<<<<<< HEAD
+	/*dest[i] '\0';*/
+=======
 	dest[i] = '\0';
+>>>>>>> 0002da9e4dbcabbf99605d7ec139e14b0e32fe95
 	return (dest);
 }

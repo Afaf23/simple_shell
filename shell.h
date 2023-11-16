@@ -28,7 +28,7 @@ void freearray(char **array);
 
 extern char **envir;
 
-
+char **split(char *line);
 int _execute(char **command, char **argv, int index);
 char *read_line(void);
 char **tokeniser(char *line);
