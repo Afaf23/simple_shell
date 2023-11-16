@@ -9,9 +9,9 @@ char *get_env(char *var)
 	char *temp, *brk, *v, *env;
 	int i;
 
-	for (i = 0; envrmt[i]; i++)
+	for (i = 0; envir[i]; i++)
 	{
-		temp = _strdup(envrmt[i]);
+		temp = _strdup(envir[i]);
 		brk = strtok(temp, "=");
 		if (_strcmp(brk, var) == 0)
 		{

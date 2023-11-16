@@ -6,7 +6,7 @@
  */
 int exit_builtin(char *message)
 {
-	char *builtin[] = {"exit", "envrmt", NULL};
+	char *builtin[] = {"exit", "env", NULL};
 	int i;
 
 	for (i = 0; builtin[i]; i++)
@@ -30,7 +30,7 @@ void handle_b(char **command, char **argv, int *status, int index)
 
 	if (_strcmp(command[0], "exit") == 0)
 		exit_sh(command, status);
-	else if (_strcmp(command[0], "envrmt") == 0)
+	else if (_strcmp(command[0], "env") == 0)
 		p_envrmt(command, status);
 }
 /**
@@ -52,9 +52,9 @@ void p_envrmt(char **command, int *status)
 {
 	int i;
 
-	for (i = 0; envrmt[i]; i++)
+	for (i = 0; envir[i]; i++)
 	{
-		write(STDOUT_FILENO, envrmt[i], _strlen(envrmt[i]));
+		write(STDOUT_FILENO, envir[i], _strlen(envir[i]));
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	freearray(command);

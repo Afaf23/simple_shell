@@ -15,11 +15,7 @@
 void we_print(const char *string);
 
 
-
 #define DELIM " \t\n"
-extern char **envrmt;
-
-
 
 /**
  * freearray - Frees the memory allocated to an array of strings
@@ -30,7 +26,7 @@ void freearray(char **array);
 
 
 
-
+extern char **envir;
 
 
 int _execute(char **command, char **argv, int index);

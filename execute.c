@@ -22,7 +22,7 @@ int _execute(char **command, char **argv, int index)
 	ch = fork();
 	if (ch == 0)
 	{
-		if (execve(msg, command, envrmt) == -1)
+		if (execve(msg, command, envir) == -1)
 		{
 			free(msg);
 			msg = NULL;
