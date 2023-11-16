@@ -34,7 +34,11 @@ char **tokeniser(char *line)
 	token = strtok(line, DELIM);
 	while (token)
 	{
+<<<<<<< HEAD
 		/*char *command = _strdup(token);*/
+=======
+		command[i] = _strdup(token);
+>>>>>>> 0002da9e4dbcabbf99605d7ec139e14b0e32fe95
 		token = strtok(NULL, DELIM);
 		i++;
 	}

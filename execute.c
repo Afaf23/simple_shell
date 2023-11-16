@@ -3,6 +3,7 @@
  * _execute - function that execute a command with arguments.
  * @argv: An array of strings.
  * @command: a double pointer to a char.
+ * @index: is an integer.
  * Return: The exit status of the executed command.
  */
 int _execute(char **command, char **argv, int index)
@@ -24,6 +25,10 @@ int _execute(char **command, char **argv, int index)
 		if (execve(msg, command, envrmt) == -1)
 		{
 			free(msg);
+<<<<<<< HEAD
+=======
+			msg = NULL;
+>>>>>>> 0002da9e4dbcabbf99605d7ec139e14b0e32fe95
 			freearray(command);
 		}
 	}
@@ -31,7 +36,12 @@ int _execute(char **command, char **argv, int index)
 	{
 		waitpid(ch, &status, 0);
 		freearray(command);
+<<<<<<< HEAD
 		/*free(msg),*/ msg = NULL;
+=======
+		free(msg);
+		msg = NULL;
+>>>>>>> 0002da9e4dbcabbf99605d7ec139e14b0e32fe95
 	}
 	return (WEXITSTATUS(status));
 }
