@@ -7,7 +7,7 @@
 #include <limits.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <sys:stat.h>
+#include <sys/stat.h>
 #include <errno.h>
 #include <fcntl.h>
 
@@ -32,7 +32,7 @@ void freearray(char **array);
 
 
 
-
+char **split(char *line);
 int _execute(char **command, char **argv, int index);
 char *read_line(void);
 char **tokeniser(char *line);

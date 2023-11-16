@@ -9,8 +9,9 @@
 char **tokeniser(char *line)
 {
 	char *token = NULL, *tmp = NULL;
-	char **command = NULL;
+	/*char **command = NULL;*/
 	int ctr = 0, i = 0;
+	char **command;
 
 	if (!line)
 		return (NULL);
@@ -33,7 +34,7 @@ char **tokeniser(char *line)
 	token = strtok(line, DELIM);
 	while (token)
 	{
-		command(i) = _strdup(token);
+		/*char *command = _strdup(token);*/
 		token = strtok(NULL, DELIM);
 		i++;
 	}

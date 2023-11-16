@@ -7,7 +7,7 @@
  */
 int _execute(char **command, char **argv, int index)
 {
-	char *msg
+	char *msg;
 	pid_t ch;
 	int status;
 
@@ -23,7 +23,7 @@ int _execute(char **command, char **argv, int index)
 	{
 		if (execve(msg, command, envrmt) == -1)
 		{
-			free(msg), msg == NULL;
+			free(msg);
 			freearray(command);
 		}
 	}
@@ -31,7 +31,7 @@ int _execute(char **command, char **argv, int index)
 	{
 		waitpid(ch, &status, 0);
 		freearray(command);
-		free(msg), msg == NULL;
+		/*free(msg),*/ msg = NULL;
 	}
 	return (WEXITSTATUS(status));
 }

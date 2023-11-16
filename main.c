@@ -1,5 +1,7 @@
 #include "shell.h"
 
+char **split(char *line);
+
 /**
  * main - main function of shell
  * @ac: arguments count
@@ -20,8 +22,8 @@ int main(int ac, char **argv)
 		if (line == NULL)
 		{
 			if (isatty(STDIN_FILENO))
-				write(STDOUT_FILENO, "\n", 1);
-				return (status);
+			write(STDOUT_FILENO, "\n", 1);
+			return (status);
 		}
 		index++;
 
@@ -32,5 +34,8 @@ int main(int ac, char **argv)
 			handle_b(command, argv, &status, index);
 		else	
 		status = _execute(command, argv, index);
+
+		freearray(command);
 	}
+
 }
